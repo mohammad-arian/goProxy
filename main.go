@@ -42,7 +42,7 @@ func firewall(w http.ResponseWriter, r *http.Request) bool {
 				log.Println(w, "Hijacking not supported", http.StatusInternalServerError)
 			}
 			clientConn, _, _ := hijacker.Hijack()
-			_, err := clientConn.Write([]byte("HTTP/1.1 200 OK \n\n <h1 dir=\"rtl\" style=\"font-size:9vw\">&#1575;&#1587;&#1578;&#1594;&#1601;&#1585;&#1575;&#1604;&#1604;&#1607;&#1563; &#1576;&#1585;&#1608; &#1578;&#1608;&#1576;&#1607; &#1705;&#1606;&#1563; &#1576;&#1583;&#1608;</h1>"))
+			_, err := clientConn.Write([]byte("HTTP/1.1 200 OK \n\n <h1 dir=\"rtl\" style=\"font-size:9vw\">Blocked</h1>"))
 			if err != nil {
 				log.Println(err)
 			}
